@@ -1,0 +1,41 @@
+﻿
+@using System.Globalization
+@using PodEZ.PodEZTemplate.Web.Areas.App.Models.Common.Modals
+@using PodEZ.PodEZTemplate.Web.Areas.App.Models.PozOrderDemo
+@model CreateOrEditPozOrderDemoModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditPozOrderDemo")) : L("CreateNewPozOrderDemo")))
+
+<div class="modal-body">
+        <div id="PozOrderDemoInformationsTab">
+            <form name="PozOrderDemoInformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.PozOrderDemo.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="PozOrderDemo_PozOrderName">@L("PozOrderName")</label>
+									<input class="form-control" id="PozOrderDemo_PozOrderName" value="@Model.PozOrderDemo.PozOrderName" type="text" name="pozOrderName"  required    />
+								</div>
+					
+								<div class="form-group">
+									<label for="PozOrderDemo_PozOrderDescription">@L("PozOrderDescription")</label>
+									<input class="form-control" id="PozOrderDemo_PozOrderDescription" value="@Model.PozOrderDemo.PozOrderDescription" type="text" name="pozOrderDescription"  required    />
+								</div>
+					
+								<div class="form-group">
+									<label for="PozOrderDemo_PozImageTotal">@L("PozImageTotal")</label>
+									<input class="form-control m-input" id="PozOrderDemo_PozImageTotal" value="@Model.PozOrderDemo.PozImageTotal.ToString(CultureInfo.InvariantCulture)" type="number" name="pozImageTotal"  />
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
