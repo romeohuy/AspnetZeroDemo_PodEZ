@@ -1,0 +1,24 @@
+﻿
+@using PodEZ.PodEZTemplate.Web.Areas.App.Models.Common.Modals
+@using PodEZ.PodEZTemplate.Web.Areas.App.Models.Categories
+@model CategoryViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("Details")))
+
+<div class="modal-body">
+    <div id="CategoryInformationsTab">
+        
+        <div class="row">
+            <div class="col-6 mb-3">
+                <h6>@L("CategoryName") :</h6>
+                @Model.Category.CategoryName
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithClose.cshtml")
+

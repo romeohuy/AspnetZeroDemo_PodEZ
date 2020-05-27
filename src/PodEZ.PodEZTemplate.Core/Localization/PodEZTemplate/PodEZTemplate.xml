@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
-  <texts>
+  <texts>    <text name="PodEz">Pod ez</text>
+    <text name="Category">Category</text>
+    <text name="CategoryName">Category name</text>
+    <text name="CategoriesHeaderInfo">Categories header info</text>
+    <text name="CreateNewCategory">Create new category</text>
+    <text name="EditCategory">Edit category</text>
+    <text name="DeleteCategory">Delete category</text>
+    <text name="Categories">Categories</text>
+
     <text name="PozOrderDemo">Poz order demo</text>
     <text name="PozOrderName">Poz order name</text>
     <text name="PozOrderDescription">Poz order description</text>

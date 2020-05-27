@@ -23,6 +23,13 @@ namespace PodEZ.PodEZTemplate.Web.Areas.App.Startup
                         order: 1
                     )
                 ).AddItem(new MenuItemDefinition(
+                        AppPageNames.Common.Categories,
+                        L("Categories"),
+                        url: "App/Categories",
+                        icon: "flaticon-more",
+                        permissionDependency: new SimplePermissionDependency(AppPermissions.Pages_Categories)
+                    )
+                ).AddItem(new MenuItemDefinition(
                         AppPageNames.Common.PozOrderDemo,
                         L("PozOrderDemo"),
                         url: "App/PozOrderDemo",

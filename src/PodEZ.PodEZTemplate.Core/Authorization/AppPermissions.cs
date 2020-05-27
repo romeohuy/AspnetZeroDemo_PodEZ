@@ -6,6 +6,11 @@
     /// </summary>
     public static class AppPermissions
     {
+        public const string Pages_Categories = "Pages.Categories";
+        public const string Pages_Categories_Create = "Pages.Categories.Create";
+        public const string Pages_Categories_Edit = "Pages.Categories.Edit";
+        public const string Pages_Categories_Delete = "Pages.Categories.Delete";
+
         public const string Pages_PozOrderDemo = "Pages.PozOrderDemo";
         public const string Pages_PozOrderDemo_Create = "Pages.PozOrderDemo.Create";
         public const string Pages_PozOrderDemo_Edit = "Pages.PozOrderDemo.Edit";

@@ -1,0 +1,31 @@
+﻿
+@using System.Globalization
+@using PodEZ.PodEZTemplate.Web.Areas.App.Models.Common.Modals
+@using PodEZ.PodEZTemplate.Web.Areas.App.Models.Categories
+@model CreateOrEditCategoryModalViewModel
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditCategory")) : L("CreateNewCategory")))
+
+<div class="modal-body">
+        <div id="CategoryInformationsTab">
+            <form name="CategoryInformationsForm" role="form" novalidate class="form-validation">
+
+                @if (Model.IsEditMode)
+                {
+                    <input type="hidden" name="id" value="@Model.Category.Id" />
+                }
+
+				
+
+				
+								<div class="form-group">
+									<label for="Category_CategoryName">@L("CategoryName")</label>
+									<input class="form-control" id="Category_CategoryName" value="@Model.Category.CategoryName" type="text" name="categoryName"  required    />
+								</div>
+					
+
+            </form>
+        </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/App/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="PodEZ\Dtos\" />
     <Folder Include="PodEZ\Entity\PozOrderDemo\Dtos\" />
   </ItemGroup>
 

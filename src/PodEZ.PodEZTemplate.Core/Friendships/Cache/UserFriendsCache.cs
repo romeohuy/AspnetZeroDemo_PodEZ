@@ -1,13 +1,13 @@
 ﻿using Abp;
-using Abp.Domain.Repositories;
-using Abp.Runtime.Caching;
-using PodEZ.PodEZTemplate.Chat;
-using System.Linq;
 using Abp.Dependency;
+using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.MultiTenancy;
+using Abp.Runtime.Caching;
 using Abp.Threading;
 using PodEZ.PodEZTemplate.Authorization.Users;
+using PodEZ.PodEZTemplate.Chat;
+using System.Linq;
 
 namespace PodEZ.PodEZTemplate.Friendships.Cache
 {
@@ -39,6 +39,7 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
         }
 
         [UnitOfWork]
+        [System.Obsolete]
         public virtual UserWithFriendsCacheItem GetCacheItem(UserIdentifier userIdentifier)
         {
             return _cacheManager
@@ -46,6 +47,7 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
                 .Get<string, UserWithFriendsCacheItem>(userIdentifier.ToUserIdentifierString(), f => GetUserFriendsCacheItemInternal(userIdentifier));
         }
 
+        [System.Obsolete]
         public virtual UserWithFriendsCacheItem GetCacheItemOrNull(UserIdentifier userIdentifier)
         {
             return _cacheManager
@@ -54,6 +56,7 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
         }
 
         [UnitOfWork]
+        [System.Obsolete]
         public virtual void ResetUnreadMessageCount(UserIdentifier userIdentifier, UserIdentifier friendIdentifier)
         {
             var user = GetCacheItemOrNull(userIdentifier);
@@ -78,8 +81,9 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
                 UpdateUserOnCache(userIdentifier, user);
             }
         }
-        
+
         [UnitOfWork]
+        [System.Obsolete]
         public virtual void IncreaseUnreadMessageCount(UserIdentifier userIdentifier, UserIdentifier friendIdentifier, int change)
         {
             var user = GetCacheItemOrNull(userIdentifier);
@@ -105,6 +109,7 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
             }
         }
 
+        [System.Obsolete]
         public void AddFriend(UserIdentifier userIdentifier, FriendCacheItem friend)
         {
             var user = GetCacheItemOrNull(userIdentifier);
@@ -123,6 +128,7 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
             }
         }
 
+        [System.Obsolete]
         public void RemoveFriend(UserIdentifier userIdentifier, FriendCacheItem friend)
         {
             var user = GetCacheItemOrNull(userIdentifier);
@@ -141,6 +147,7 @@ namespace PodEZ.PodEZTemplate.Friendships.Cache
             }
         }
 
+        [System.Obsolete]
         public void UpdateFriend(UserIdentifier userIdentifier, FriendCacheItem friend)
         {
             var user = GetCacheItemOrNull(userIdentifier);

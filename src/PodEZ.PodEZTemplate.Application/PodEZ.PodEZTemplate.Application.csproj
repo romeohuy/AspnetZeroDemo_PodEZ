@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="PodEZ\Entity\PozOrderDemo\Exporting\" />
+    <Folder Include="PodEZ\Exporting\" />
   </ItemGroup>
 
 </Project>

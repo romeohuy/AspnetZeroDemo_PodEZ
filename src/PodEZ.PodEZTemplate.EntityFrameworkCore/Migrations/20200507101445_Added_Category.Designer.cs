@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PodEZ.PodEZTemplate.EntityFrameworkCore;
 
 namespace PodEZ.PodEZTemplate.Migrations
 {
     [DbContext(typeof(PodEZTemplateDbContext))]
-    partial class PodEZTemplateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200507101445_Added_Category")]
+    partial class Added_Category
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

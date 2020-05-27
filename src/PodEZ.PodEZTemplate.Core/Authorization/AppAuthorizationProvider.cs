@@ -30,6 +30,13 @@ namespace PodEZ.PodEZTemplate.Authorization
 
             var pages = context.GetPermissionOrNull(AppPermissions.Pages) ?? context.CreatePermission(AppPermissions.Pages, L("Pages"));
 
+            var categories = pages.CreateChildPermission(AppPermissions.Pages_Categories, L("Categories"));
+            categories.CreateChildPermission(AppPermissions.Pages_Categories_Create, L("CreateNewCategory"));
+            categories.CreateChildPermission(AppPermissions.Pages_Categories_Edit, L("EditCategory"));
+            categories.CreateChildPermission(AppPermissions.Pages_Categories_Delete, L("DeleteCategory"));
+
+
+
             var pozOrderDemo = pages.CreateChildPermission(AppPermissions.Pages_PozOrderDemo, L("PozOrderDemo"));
             pozOrderDemo.CreateChildPermission(AppPermissions.Pages_PozOrderDemo_Create, L("CreateNewPozOrderDemo"));
             pozOrderDemo.CreateChildPermission(AppPermissions.Pages_PozOrderDemo_Edit, L("EditPozOrderDemo"));

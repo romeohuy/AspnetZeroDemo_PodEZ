@@ -1,4 +1,6 @@
-﻿using PodEZ.PodEZTemplate.PodEZ.Entity.PozOrderDemo.Dtos;
+﻿using PodEZ.PodEZTemplate.PodEz.Dtos;
+using PodEZ.PodEZTemplate.PodEz;
+using PodEZ.PodEZTemplate.PodEZ.Entity.PozOrderDemo.Dtos;
 using PodEZ.PodEZTemplate.PodEZ.Entity.PozOrderDemo;
 using Abp.Application.Editions;
 using Abp.Application.Features;
@@ -49,6 +51,8 @@ namespace PodEZ.PodEZTemplate
     {
         public static void CreateMappings(IMapperConfigurationExpression configuration)
         {
+            configuration.CreateMap<CreateOrEditCategoryDto, Category>().ReverseMap();
+            configuration.CreateMap<CategoryDto, Category>().ReverseMap();
             configuration.CreateMap<CreateOrEditPozOrderDemoDto, PodEZ.Entity.PozOrderDemo.PozOrderDemo>().ReverseMap();
             configuration.CreateMap<PozOrderDemoDto, PodEZ.Entity.PozOrderDemo.PozOrderDemo>().ReverseMap();
             //Inputs

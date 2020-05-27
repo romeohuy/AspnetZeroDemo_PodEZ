@@ -1,4 +1,5 @@
-﻿using PodEZ.PodEZTemplate.PodEZ.Entity.PozOrderDemo;
+﻿using PodEZ.PodEZTemplate.PodEz;
+using PodEZ.PodEZTemplate.PodEZ.Entity.PozOrderDemo;
 using Abp.IdentityServer4;
 using Abp.Organizations;
 using Abp.Zero.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace PodEZ.PodEZTemplate.EntityFrameworkCore
 {
     public class PodEZTemplateDbContext : AbpZeroDbContext<Tenant, Role, User, PodEZTemplateDbContext>, IAbpPersistedGrantDbContext
     {
+        public virtual DbSet<Category> Categories { get; set; }
+
         public virtual DbSet<PodEZ.Entity.PozOrderDemo.PozOrderDemo> PozOrderDemo { get; set; }
 
         /* Define an IDbSet for each entity of the application */

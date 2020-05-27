@@ -1,12 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Abp.Extensions;
+using Newtonsoft.Json;
 using System;
-using Abp.Extensions;
 
 namespace PodEZ.PodEZTemplate
 {
     public class TimeSpanToJsonStringConverter : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value != null)
             {
@@ -14,7 +14,7 @@ namespace PodEZ.PodEZTemplate
             }
         }
 
-        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.Value == null)
             {

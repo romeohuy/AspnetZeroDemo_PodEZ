@@ -4,6 +4,7 @@
     {
         public static class Common
         {
+            public const string Categories = "PodEz.Categories";
             public const string PozOrderDemo = "PozOrderDemo.PozOrderDemo";
             public const string Administration = "Administration";
             public const string Roles = "Administration.Roles";
