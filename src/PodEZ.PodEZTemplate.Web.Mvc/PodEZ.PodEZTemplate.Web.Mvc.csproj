@@ -29,7 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="package-lock.json" />
     <Content Remove="wwwroot\swagger\ui\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="yarn.lock" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,5 +72,4 @@
     <Folder Include="Areas\App\Views\PozOrderDemo\" />
     <Folder Include="wwwroot\view-resources\Areas\App\Views\PozOrderDemo\" />
   </ItemGroup>
-
 </Project>
